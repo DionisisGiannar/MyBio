@@ -157,6 +157,7 @@ main {
 @media (max-width: 900px) {
     .page{
         padding: 130px 30px;
+    
     }
     main {
     grid-template-columns: minmax(0, 1fr);
