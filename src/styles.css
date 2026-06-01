@@ -909,10 +909,6 @@ button {
   text-align: right;
 }
 
-.mobile-scroll-cue {
-  display: none;
-}
-
 .scroll-cue {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -922,6 +918,10 @@ button {
   transform: translateY(-4px);
   position: relative;
   z-index: 3;
+}
+
+.scroll-cue.mobile-scroll-cue {
+  display: none;
 }
 
 .scroll-cue > span {
@@ -1089,6 +1089,11 @@ button {
     margin-top: 22px;
   }
 
+  .scroll-cue.desktop-scroll-cue {
+    margin: 20px 42px 48px;
+    transform: none;
+  }
+
   .left-stack {
     grid-template-columns: 1fr 1fr;
   }
@@ -1246,13 +1251,13 @@ button {
     margin-top: 0;
   }
 
-  .mobile-scroll-cue {
+  .scroll-cue.mobile-scroll-cue {
     order: 4;
     width: min(548px, 100%);
     display: grid;
   }
 
-  .desktop-scroll-cue {
+  .scroll-cue.desktop-scroll-cue {
     display: none;
   }
 
@@ -1296,9 +1301,21 @@ button {
     grid-template-columns: 82px 28px minmax(0, 1fr);
   }
 
+  .role-list.has-thread::before {
+    left: -15px;
+  }
+
   .role-item {
     grid-template-columns: 1fr;
     gap: 2px;
+  }
+
+  .timeline-dot {
+    left: -20px;
+  }
+
+  .timeline-dot.current {
+    left: -22px;
   }
 
   .role-location {
@@ -1354,11 +1371,4 @@ button {
     grid-column: 2;
   }
 
-  .timeline-dot {
-    left: -20px;
-  }
-
-  .timeline-dot.current {
-    left: -22px;
-  }
 }
